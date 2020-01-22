@@ -1,0 +1,14 @@
+# Redirects from what the browser requests to what we serve for Netlify
+
+https://lukemcdonald.netlify.com/*   https://lukemcdonald.com/:splat 301!
+
+/sitemap.xml     /sitemap.xml  200
+
+/about           /             301
+/author          /             301
+/blog/*          /             301
+/jplayer-skins   /             301
+/portfolio/*     /             301
+
+/isagenix        https://thelukemcdonald.isagenix.com/            301
+/isagenix/intro  https://thelukemcdonald.isagenix.com/isamovie    301

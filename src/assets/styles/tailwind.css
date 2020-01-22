@@ -1,0 +1,12 @@
+/*! purgecss start ignore */
+@import "tailwindcss/base";
+@import 'theme/base/typography.css';
+
+@import "tailwindcss/components";
+@import 'theme/components/button.css';
+/*! purgecss end ignore */
+
+@import "tailwindcss/utilities";
+/*! purgecss start ignore */
+@import 'theme/utilities/accessibility.css';
+/*! purgecss end ignore */
