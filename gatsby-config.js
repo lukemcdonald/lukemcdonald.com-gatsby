@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-const config = require(`./config/site`)
+const config = require(`./config/site`);
 
 module.exports = {
 	siteMetadata: {
@@ -14,8 +14,8 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				path: `${__dirname}/src/assets/images`,
 				name: `images`,
+				path: `${__dirname}/src/assets/images`,
 			},
 		},
 		{
@@ -32,25 +32,8 @@ module.exports = {
 				name: `content`,
 			},
 		},
-		{
-			resolve: `gatsby-plugin-postcss`,
-			options: {
-				postCssPlugins: [
-					require(`postcss-nested`),
-					require(`postcss-import`),
-					require(`tailwindcss`)(`./src/assets/styles/tailwind.config.js`),
-					require(`autoprefixer`),
-				],
-			},
-		},
-		{
-			resolve: `gatsby-plugin-purgecss`,
-			options: {
-				printRejected: false,
-				develop: false,
-				tailwind: true,
-			},
-		},
+		`gatsby-plugin-postcss`,
+
 		{
 			resolve: `gatsby-plugin-react-svg`,
 			options: {
@@ -70,12 +53,7 @@ module.exports = {
 				],
 			},
 		},
-		{
-			resolve: `gatsby-plugin-sitemap`,
-			options: {
-				exclude: [`/admin`],
-			},
-		},
+		`gatsby-plugin-sitemap`,
 		{
 			resolve: `gatsby-transformer-remark`,
 			options: {
@@ -121,4 +99,4 @@ module.exports = {
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-netlify`,
 	],
-}
+};

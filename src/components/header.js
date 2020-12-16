@@ -1,12 +1,13 @@
-import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-import slugify from 'slugify'
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import slugify from 'slugify';
+import classnames from 'classnames';
 
-import Link from './link'
+import Link from './link';
 
-import headerStyles from '../assets/styles/theme/modules/header.module.css'
+import headerStyles from '../assets/css/theme/modules/header.module.css';
 
-import Logo from '../assets/svgs/logo.svg'
+import Logo from '../assets/svgs/logo.svg';
 
 const menuLinks = [
 	{
@@ -37,9 +38,9 @@ const menuLinks = [
 			},
 		],
 	},
-]
+];
 
-const Header = () => {
+export default function Header() {
 	const data = useStaticQuery(graphql`
 		query {
 			site {
@@ -48,21 +49,25 @@ const Header = () => {
 				}
 			}
 		}
-	`)
+	`);
 
-	const { title } = data.site.siteMetadata
+	const { site } = data;
 
 	return (
 		<header
-			className={`${headerStyles.siteHeader} absolute top-0 left-0 flex items-center p-5 w-1/2 z-50`}
+			className={classnames(
+				'absolute top-0 left-0 flex items-center p-5 w-1/2 z-50',
+				headerStyles.siteHeader
+			)}
 		>
 			<Link
 				to="/"
-				className="bg-white inline-flex items-center no-underline relative text-white whitespace-no-wrap hover:shadow-lg"
+				className="relative inline-flex items-center text-white no-underline bg-white whitespace-nowrap hover:shadow-lg"
 			>
-				<Logo className="fill-current bg-primary-900 h-16 w-16 p-4" />
-				<h1 className="transition-all duration-150 font-bold overflow-hidden px-0 text-xl text-primary-900 tracking-wide uppercase">
-					{title}
+				<Logo className="w-16 h-16 p-4 fill-current bg-primary-900" />
+
+				<h1 className="px-0 overflow-hidden text-xl font-bold tracking-wide uppercase transition-all duration-150 text-primary-900">
+					{site.siteMetadata.title}
 				</h1>
 			</Link>
 
@@ -70,21 +75,21 @@ const Header = () => {
 				<ul className="flex">
 					{menuLinks.map((link) => (
 						<li
-							className="hover:text-white group block relative hover:cursor-pointer"
+							className="relative block hover:text-white group hover:cursor-pointer"
 							key={slugify(link.name)}
 						>
 							<Link
 								activeClassName="text-white"
-								className=" tracking-wide uppercase block p-2"
-								partiallyActive={`/` !== link.to}
+								className="block p-2 tracking-wide uppercase"
+								partiallyActive={link.to !== `/`}
 								to={link.to}
 							>
 								{link.name}
 							</Link>
 
-							{link.links && (
+							{link?.links && (
 								<ul
-									className="group-hover:visible group-hover:opacity-100 group-hover:block hidden invisible opacity-0 absolute left-0 transition-all duration-500 transform -translate-x-1/2 bg-white rounded py-2 shadow-lg w-40 min-w-full"
+									className="absolute left-0 invisible hidden w-40 min-w-full py-2 transition-all duration-500 transform -translate-x-1/2 bg-white rounded shadow-lg opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block"
 									style={{ left: '50%' }}
 								>
 									{link.links.map((item) => (
@@ -94,7 +99,7 @@ const Header = () => {
 										>
 											<Link
 												activeClassName="text-primary-700"
-												className="px-4 py-1 hover:text-primary-700 block"
+												className="block px-4 py-1 hover:text-primary-700"
 												partiallyActive
 												to={item.to}
 											>
@@ -109,7 +114,5 @@ const Header = () => {
 				</ul>
 			</nav>
 		</header>
-	)
+	);
 }
-
-export default Header

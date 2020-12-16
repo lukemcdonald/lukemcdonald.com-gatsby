@@ -1,37 +1,36 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Entry from '../components/entry'
+import SEO from '../components/seo';
+import Entry from '../components/entry';
 
-const PageTemplate = ({ data, location }) => {
-	const post = data.markdownRemark
+export default function SinglePage({ data, location }) {
+	const { page } = data;
+
+	console.log(page);
 
 	return (
-		<Layout>
+		<>
 			<SEO
-				title={post.frontmatter.title}
-				description={post.frontmatter.description || post.excerpt}
+				title={page.frontmatter.title}
+				description={page.frontmatter.description || page.excerpt}
 				location={location}
-				image={post.frontmatter.image.fluid.src || ''}
+				image={page.frontmatter.image?.childImageSharp.fluid.src || ''}
 			/>
 
 			<Entry
-				title={post.frontmatter.title}
-				subtitle={post.frontmatter.subtitle}
-				html={post.html}
-				image={post.frontmatter.image}
+				title={page.frontmatter.title}
+				subtitle={page.frontmatter.subtitle}
+				html={page.html}
+				image={page.frontmatter.image || ''}
 			/>
-		</Layout>
-	)
+		</>
+	);
 }
 
-export default PageTemplate
-
 export const query = graphql`
-	query PageBySlug($slug: String!) {
-		markdownRemark(fields: { slug: { eq: $slug } }) {
+	query($slug: String!) {
+		page: markdownRemark(fields: { slug: { eq: $slug } }) {
 			excerpt(pruneLength: 160)
 			html
 			frontmatter {
@@ -39,9 +38,9 @@ export const query = graphql`
 				subtitle
 				description
 				image {
-					...featuredImage
+					...FeaturedImage
 				}
 			}
 		}
 	}
-`
+`;

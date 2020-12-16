@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const Main = ({ children }) => (
-	<main className="absolute inset-0 lg:flex">{children}</main>
-)
-
-export default Main
+export default function Main({ children }) {
+	return <main className="absolute inset-0 lg:flex">{children}</main>;
+}

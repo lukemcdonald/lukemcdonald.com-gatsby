@@ -1,122 +1,71 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from 'react';
+import Helmet from 'react-helmet';
+import { graphql, useStaticQuery } from 'gatsby';
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
-
-const SEO = ({ description, image, keywords, lang, meta, title, location }) => {
-	const {
-		site: { siteMetadata: config },
-	} = useStaticQuery(
-		graphql`
-			query {
-				site {
-					siteMetadata {
-						title
-						tagline
-						description
-						siteUrl
-						author {
-							name
-						}
-						google {
-							verificationID
-						}
+export default function SEO({ children, location, title, description, image }) {
+	const { site } = useStaticQuery(graphql`
+		query {
+			site {
+				siteMetadata {
+					title
+					description
+					google {
+						verificationID
+					}
+					social {
+						twitter
 					}
 				}
 			}
-		`
-	)
+		}
+	`);
 
 	const seo = {
-		description: description || config.description,
-		image: image || config.siteUrl + config.image,
-		title: title || '',
-		url: config.siteUrl.concat(location.pathname || '/'),
-	}
+		title: title || site.siteMetadata.title,
+		description,
+		image: image || 'logo.svg',
+	};
 
 	return (
 		<Helmet
-			htmlAttributes={{
-				lang,
-			}}
-			title={seo.title || ''}
-			titleTemplate={`%s | ${config.title}`}
-			meta={[
-				{
-					name: `description`,
-					content: seo.description,
-				},
-				{
-					property: `og:title`,
-					content: seo.title,
-				},
-				{
-					property: `og:description`,
-					content: seo.description,
-				},
-				{
-					property: `og:type`,
-					content: `website`,
-				},
-				{
-					property: 'og:url',
-					content: seo.url,
-				},
-				{
-					name: `twitter:card`,
-					content: `summary`,
-				},
-				{
-					name: `twitter:creator`,
-					content: config.author.name,
-				},
-				{
-					name: `twitter:title`,
-					content: seo.title,
-				},
-				{
-					name: `twitter:description`,
-					content: seo.description,
-				},
-			].concat(
-				config.google.verificationID
-					? {
-							name: 'google-site-verification',
-							content: config.google.verificationID,
-					  }
-					: [],
-				keywords.length > 0
-					? {
-							name: 'keywords',
-							content: keywords.join(', '),
-					  }
-					: [],
-				meta
-			)}
-		/>
-	)
-}
+			htmlAttributes={{ lang: 'en' }}
+			titleTemplate={`%s — ${site.siteMetadata.title}`}
+		>
+			<title>{seo.title}</title>
 
-SEO.defaultProps = {
-	description: ``,
-	keywords: ``,
-	lang: `en`,
-	meta: [],
-}
+			{/* Fav Icons */}
+			<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+			<link rel="alternate icon" type="image/svg+xml" href="/favicon.svg" />
 
-SEO.propTypes = {
-	description: PropTypes.string,
-	keywords: PropTypes.string,
-	lang: PropTypes.string,
-	meta: PropTypes.arrayOf(PropTypes.object),
-	title: PropTypes.string.isRequired,
-}
+			{/* Google Verification */}
+			<meta
+				name="google-site-verification"
+				content={site.siteMetadata.google.verificationID}
+			/>
 
-export default SEO
+			{/* Open Graph */}
+			{location && <meta property="og:url" content={location.href} />}
+			<meta property="og:image" content={seo.image} />
+			<meta property="og:title" content={seo.title} key="ogtitle" />
+			<meta
+				property="og:site_name"
+				content={site.siteMetadata.title}
+				key="ogsitename"
+			/>
+			<meta property="og:description" content={seo.description} key="ogdesc" />
+
+			{/* Twitter */}
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:image" content={seo.image} />
+			<meta name="twitter:title" content={seo.title} />
+			<meta name="twitter:description" content={seo.description} />
+			<meta
+				name="twitter:creator"
+				content={`@${site.siteMetadata.social.twitter}`}
+			/>
+
+			{/* Additions and Overrides */}
+			{children}
+		</Helmet>
+	);
+}

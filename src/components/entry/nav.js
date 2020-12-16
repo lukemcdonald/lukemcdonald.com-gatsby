@@ -1,53 +1,47 @@
-import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import slugify from 'slugify'
+import React, { Fragment } from 'react';
+import classnames from 'classnames';
+import slugify from 'slugify';
+import Obfuscate from 'react-obfuscate';
 
-import Link from '../link'
+import Link from '../link';
 
-import entryStyles from '../../assets/styles/theme/modules/entry.module.css'
+import entryStyles from '../../assets/css/theme/modules/entry.module.css';
 
 const defaultLinks = [
 	{
 		name: `Github`,
-		to: `https://github.com/lukemcdonald`,
+		to: ``,
 	},
 	{
-		name: `Twitter`,
+		name: `Email`,
 		to: `https://twitter.com/thelukemcdonald`,
 	},
-]
+];
 
-const EntryNav = ({ title, links }) => (
-	<div
-		className={`${entryStyles.entryNav} bg-white text-primary-900 px-5 py-10 sm:px-10 lg:py-8 xl:py-12`}
-	>
-		{title && <h1 className="font-normal mb-6 text-3xl">{title}</h1>}
-		{links && (
-			<div className="flex inline-flex items-center">
-				{links.map((link) => (
-					<Fragment key={slugify(link.name)}>
-						<Link
-							to={link.to}
-							className="tracking-wide uppercase block border-b-2 border-transparent no-underline text-inherit tracking-wide uppercase hover:border-primary-500"
-						>
-							{link.name}
-						</Link>
-						<span className="border-b mx-4 w-24 last:hidden" />
-					</Fragment>
-				))}
+export default function EntryNav({ title, links = defaultLinks }) {
+	const linkStyles =
+		'block tracking-wide no-underline uppercase border-b-2 border-transparent text-inherit hover:border-primary-500';
+
+	return (
+		<div
+			className={classnames(
+				`bg-white text-primary-900 px-5 py-10 sm:px-10 lg:py-8 xl:py-12`,
+				entryStyles.entryNav
+			)}
+		>
+			<h1 className="mb-6 text-3xl font-normal">{title || 'Connect.'}</h1>
+
+			<div className="inline-flex items-center">
+				<Link to="https://github.com/lukemcdonald" className={linkStyles}>
+					GitHub
+				</Link>
+
+				<span className="w-24 mx-4 border-b" />
+
+				<Obfuscate className={linkStyles} email="thelukemcdonald@gmail.com">
+					Email
+				</Obfuscate>
 			</div>
-		)}
-	</div>
-)
-
-EntryNav.defaultProps = {
-	links: defaultLinks,
-	title: `Connect.`,
+		</div>
+	);
 }
-
-EntryNav.propTypes = {
-	links: PropTypes.arrayOf(PropTypes.object),
-	title: PropTypes.string,
-}
-
-export default EntryNav

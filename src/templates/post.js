@@ -1,16 +1,15 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Entry from '../components/entry'
-import PostNav from '../components/post-nav'
+import SEO from '../components/seo';
+import Entry from '../components/entry';
+import PostNav from '../components/postNav';
 
-const PostTemplate = ({ data, location, pageContext }) => {
-	const post = data.markdownRemark
+export default function SinglePostPage({ data, location, pageContext }) {
+	const { post } = data;
 
 	return (
-		<Layout>
+		<>
 			<SEO
 				title={post.frontmatter.title}
 				description={post.frontmatter.description || post.excerpt}
@@ -22,19 +21,17 @@ const PostTemplate = ({ data, location, pageContext }) => {
 				subtitle={post.frontmatter.subtitle}
 				date={post.frontmatter.date}
 				html={post.html}
-				image={post.frontmatter.image}
+				image={post.frontmatter.image || ''}
 			/>
 
 			<PostNav context={pageContext} />
-		</Layout>
-	)
+		</>
+	);
 }
 
-export default PostTemplate
-
 export const query = graphql`
-	query PostBySlug($slug: String!) {
-		markdownRemark(fields: { slug: { eq: $slug } }) {
+	query($slug: String!) {
+		post: markdownRemark(fields: { slug: { eq: $slug } }) {
 			excerpt(pruneLength: 160)
 			html
 			frontmatter {
@@ -44,4 +41,4 @@ export const query = graphql`
 			}
 		}
 	}
-`
+`;

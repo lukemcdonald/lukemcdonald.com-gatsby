@@ -1,33 +1,22 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import classnames from 'classnames';
 
-import entryStyles from '../../assets/styles/theme/modules/entry.module.css'
+import entryStyles from '../../assets/css/theme/modules/entry.module.css';
 
-import EntryHeader from './header'
-import EntryNav from './nav'
-import EntryBody from './body'
+import EntryHeader from './header';
+import EntryNav from './nav';
+import EntryBody from './body';
 
-const Entry = ({ title, subtitle, date, image, html }) => (
-	<article className={`${entryStyles.entry} w-full overflow-hidden`}>
-		<EntryHeader title={title} subtitle={subtitle} date={date} />
-		<EntryNav />
-		{(html || image) && <EntryBody html={html} image={image} />}
-	</article>
-)
+export default function Entry({ title, subtitle, date, image, html }) {
+	return (
+		<article
+			className={classnames('w-full overflow-hidden', entryStyles.entry)}
+		>
+			<EntryHeader title={title} subtitle={subtitle} date={date} />
 
-Entry.defaultProps = {
-	subtitle: ``,
-	date: ``,
-	image: {},
-	html: ``,
+			<EntryNav />
+
+			{(html || image) && <EntryBody html={html} image={image} />}
+		</article>
+	);
 }
-
-Entry.propTypes = {
-	title: PropTypes.string.isRequired,
-	subtitle: PropTypes.string,
-	date: PropTypes.string,
-	image: PropTypes.object,
-	html: PropTypes.string,
-}
-
-export default Entry

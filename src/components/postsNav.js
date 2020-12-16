@@ -1,13 +1,13 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
-const PostsNav = ({ context }) => {
+export default function PostsNav({ context }) {
 	const {
 		previousPagePath,
 		nextPagePath,
 		humanPageNumber,
 		numberOfPages,
-	} = context
+	} = context;
 
 	return (
 		<nav role="navigation">
@@ -28,6 +28,7 @@ const PostsNav = ({ context }) => {
 					</li>
 				)}
 			</ul>
+
 			{numberOfPages > 1 && (
 				<div>
 					<span className="hidden">Page</span>
@@ -35,7 +36,5 @@ const PostsNav = ({ context }) => {
 				</div>
 			)}
 		</nav>
-	)
+	);
 }
-
-export default PostsNav

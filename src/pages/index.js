@@ -1,36 +1,31 @@
-/**
- * @link Gallery of images: https://egghead.io/lessons/gatsby-add-multiple-images-from-a-directory-with-gatsby-image
- */
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import React from 'react'
-import { graphql } from 'gatsby'
+import SEO from '../components/seo';
+import Entry from '../components/entry';
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Entry from '../components/entry'
+export default function IndexPage({ data, location }) {
+	const { home } = data;
 
-const IndexPage = ({ data, location }) => {
-	const post = data.markdownRemark
+	console.log(home);
 
 	return (
-		<Layout>
+		<>
 			<SEO title="Home" location={location} />
 
 			<Entry
-				title={post.frontmatter.title}
-				subtitle={post.frontmatter.subtitle}
-				html={post.html}
-				image={post.frontmatter.image}
+				title={home.frontmatter.title}
+				subtitle={home.frontmatter.subtitle}
+				html={home.html}
+				image={home.frontmatter.image}
 			/>
-		</Layout>
-	)
+		</>
+	);
 }
-
-export default IndexPage
 
 export const query = graphql`
 	query {
-		markdownRemark(fields: { slug: { eq: "home" } }) {
+		home: markdownRemark(fields: { slug: { eq: "home" } }) {
 			excerpt(pruneLength: 160)
 			html
 			frontmatter {
@@ -38,9 +33,9 @@ export const query = graphql`
 				subtitle
 				description
 				image {
-					...featuredImage
+					...FeaturedImage
 				}
 			}
 		}
 	}
-`
+`;

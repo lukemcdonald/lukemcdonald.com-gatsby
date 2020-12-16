@@ -2,7 +2,7 @@
 draft: false
 slug: "home"
 title: "Greetings."
-subtitle: "<small class='font-semibold'>1.</small> Christian <small class='font-semibold ml-2'>2.</small> Husband <small class='font-semibold ml-2'>3.</small> Father <small class='font-semibold ml-2'>4.</small> Coach"
+subtitle: "<small class='font-semibold'>1.</small> Christian <small class='ml-2 font-semibold'>2.</small> Husband <small class='ml-2 font-semibold'>3.</small> Father <small class='ml-2 font-semibold'>4.</small> Coach"
 image: "../assets/images/luke-mcdonald-stache.jpg"
 ---
 

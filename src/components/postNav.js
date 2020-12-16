@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
-const PostNav = ({ context }) => {
-	const { previous, next } = context
+export default function PostNav({ context }) {
+	const { previous, next } = context;
 
 	return (
 		<nav>
@@ -15,6 +15,7 @@ const PostNav = ({ context }) => {
 						</Link>
 					</li>
 				)}
+
 				{next && (
 					<li>
 						<Link to={next.fields.path} rel="next">
@@ -25,7 +26,5 @@ const PostNav = ({ context }) => {
 				)}
 			</ul>
 		</nav>
-	)
+	);
 }
-
-export default PostNav

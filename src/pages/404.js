@@ -1,40 +1,38 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Entry from '../components/entry'
+import SEO from '../components/seo';
+import Entry from '../components/entry';
 
-const ErrorPage = ({ data, location }) => {
-	const post = data.markdownRemark
+export default function ErrorPage({ data, location }) {
+	const { error } = data;
 
 	return (
-		<Layout>
+		<>
 			<SEO title="404: Not Found" location={location} />
 
 			<Entry
-				title={post.frontmatter.title}
-				subtitle={post.frontmatter.subtitle}
-				image={post.frontmatter.image}
+				title={error.frontmatter.title}
+				subtitle={error.frontmatter.subtitle}
+				image={error.frontmatter.image}
 			/>
-		</Layout>
-	)
+		</>
+	);
 }
-
-export default ErrorPage
 
 export const query = graphql`
 	query {
-		markdownRemark(fields: { slug: { eq: "404" } }) {
+		error: markdownRemark(fields: { slug: { eq: "404" } }) {
 			excerpt(pruneLength: 160)
 			html
 			frontmatter {
 				title
 				subtitle
+				description
 				image {
-					...featuredImage
+					...FeaturedImage
 				}
 			}
 		}
 	}
-`
+`;
