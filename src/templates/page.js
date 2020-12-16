@@ -7,8 +7,6 @@ import Entry from '../components/entry';
 export default function SinglePage({ data, location }) {
 	const { page } = data;
 
-	console.log(page);
-
 	return (
 		<>
 			<SEO

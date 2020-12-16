@@ -135,8 +135,6 @@ async function createWorkPages({ graphql, actions, reporter }) {
 	}
 
 	data.works.nodes.forEach((node) => {
-		console.log(node.fields);
-
 		actions.createPage({
 			path: node.fields.path,
 			component: path.resolve(`./src/templates/work.js`),

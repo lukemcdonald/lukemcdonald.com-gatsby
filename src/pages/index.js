@@ -7,8 +7,6 @@ import Entry from '../components/entry';
 export default function IndexPage({ data, location }) {
 	const { home } = data;
 
-	console.log(home);
-
 	return (
 		<>
 			<SEO title="Home" location={location} />
