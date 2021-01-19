@@ -33,7 +33,6 @@ module.exports = {
 			},
 		},
 		`gatsby-plugin-postcss`,
-
 		{
 			resolve: `gatsby-plugin-react-svg`,
 			options: {
@@ -78,11 +77,20 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{
-			resolve: `gatsby-plugin-google-tagmanager`,
-			options: {
-				id: config.google.tagManagerID,
-			},
-		},
+      resolve: 'gatsby-plugin-fathom',
+      options: {
+        // Fathom server URL. Defaults to `cdn.usefathom.com`
+        trackingUrl: 'lukemcdonald.com',
+        // Unique site id
+        siteId: 'JVGCFADI',
+        // Domain whitelist
+        whitelistHostnames: [
+          'lukemcdonald.com',
+          'www.lukemcdonald.com',
+          'lukemcdonald.netlify.com'
+        ]
+      }
+    },
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
