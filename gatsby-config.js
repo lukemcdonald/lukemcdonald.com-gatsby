@@ -77,21 +77,6 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{
-      resolve: 'gatsby-plugin-fathom',
-      options: {
-        // Fathom server URL. Defaults to `cdn.usefathom.com`
-        trackingUrl: 'lukemcdonald.com',
-        // Unique site id
-        siteId: 'JVGCFADI',
-        // Domain whitelist
-        whitelistHostnames: [
-          'lukemcdonald.com',
-          'www.lukemcdonald.com',
-          'lukemcdonald.netlify.com'
-        ]
-      }
-    },
-		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				name: config.title,

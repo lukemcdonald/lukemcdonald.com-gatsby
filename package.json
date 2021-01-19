@@ -1,34 +1,8 @@
 {
-  "name": "gatsby-starter-site",
-  "description": "Gatsby starter site with Tailwind CSS, Purge CSS, Markdown, SEO, and more.",
-  "version": "0.1.0",
   "author": {
-    "name": "Luke McDonald",
     "email": "thelukemcdonald@gmail.com",
+    "name": "Luke McDonald",
     "url": "https://lukemcdonald.com"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lukemcdonald/gatsby-starter-site"
-  },
-  "scripts": {
-    "build": "NODE_ENV=production cross-env NODE_OPTIONS='-r esm' gatsby build",
-    "develop": "cross-env NODE_OPTIONS='-r esm' gatsby develop",
-    "start": "npm run develop",
-    "serve": "cross-env NODE_OPTIONS='-r esm' gatsby serve",
-    "clean": "gatsby clean"
-  },
-  "eslintConfig": {
-    "extends": [
-      "wesbos"
-    ],
-    "rules": {
-      "react/prop-types": 0
-    }
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.3.1",
@@ -37,8 +11,6 @@
     "dotenv": "^8.2.0",
     "gatsby": "^2.29.0",
     "gatsby-image": "^2.8.0",
-    "gatsby-plugin-fathom": "^1.3.0",
-    "gatsby-plugin-google-tagmanager": "^2.8.0",
     "gatsby-plugin-manifest": "^2.9.0",
     "gatsby-plugin-netlify": "^2.8.0",
     "gatsby-plugin-postcss": "^3.4.0",
@@ -67,6 +39,7 @@
     "tailwindcss": "^2.0.2",
     "typeface-archivo": "^1.1.13"
   },
+  "description": "Gatsby starter site with Tailwind CSS, Purge CSS, Markdown, SEO, and more.",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.3",
@@ -82,5 +55,30 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "esm": "^3.2.25",
     "prettier": "^2.2.1"
-  }
+  },
+  "eslintConfig": {
+    "extends": [
+      "wesbos"
+    ],
+    "rules": {
+      "react/prop-types": 0
+    }
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "name": "gatsby-starter-site",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lukemcdonald/gatsby-starter-site"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production cross-env NODE_OPTIONS='-r esm' gatsby build",
+    "clean": "gatsby clean",
+    "develop": "cross-env NODE_OPTIONS='-r esm' gatsby develop",
+    "serve": "cross-env NODE_OPTIONS='-r esm' gatsby serve",
+    "start": "npm run develop"
+  },
+  "version": "0.1.0"
 }
