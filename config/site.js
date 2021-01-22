@@ -27,8 +27,7 @@ module.exports = {
 		email: 'thelukemcdonald@gmail.com',
 	},
 	google: {
-		tagManagerID: 'GTM-N3WQNH',
 		trackingID: '',
 		verificationID: '4jMDBbKyVQPMqqE3YYqw2vabnA3CR_uU9l2sOtRRmjM',
 	},
-}
+};
