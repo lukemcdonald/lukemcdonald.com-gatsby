@@ -1,0 +1,30 @@
+/* Site Header
+------------------------------------------------------------------------------*/
+
+@layer components {
+  .site-header {
+    & > .group:hover nav {
+      transition-delay: 0ms;
+    }
+
+    nav {
+      transition-delay: 200ms;
+    }
+
+    h1 {
+      max-width: 0;
+    }
+
+    > a:hover  {
+      h1 {
+        @apply max-w-6xl px-4 duration-300;
+      }
+
+      & + nav {
+        @apply opacity-0;
+        transition-duration: 0s;
+        transition-delay: 0s;
+      }
+    }
+  }
+}

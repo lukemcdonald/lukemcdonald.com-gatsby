@@ -5,14 +5,15 @@
  * -----------------------------------------------------------------------------
  */
 @import "tailwindcss/base";
-
+@import 'theme/base/layout.css';
 
 /**
  * Components
  * -----------------------------------------------------------------------------
  */
 @import "tailwindcss/components";
-@import 'theme/components/button.css';
+@import 'theme/components/entry.css';
+@import 'theme/components/header.css';
 
 /**
  * Utilites

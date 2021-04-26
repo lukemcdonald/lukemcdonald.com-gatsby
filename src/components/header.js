@@ -5,8 +5,6 @@ import classnames from 'classnames';
 
 import Link from './link';
 
-import headerStyles from '../assets/css/theme/modules/header.module.css';
-
 import Logo from '../assets/svgs/logo.svg';
 
 const menuLinks = [
@@ -57,7 +55,7 @@ export default function Header() {
 		<header
 			className={classnames(
 				'absolute top-0 left-0 flex items-center p-5 w-1/2 z-50',
-				headerStyles.siteHeader
+				'site-header'
 			)}
 		>
 			<Link

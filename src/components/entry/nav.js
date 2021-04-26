@@ -5,8 +5,6 @@ import Obfuscate from 'react-obfuscate';
 
 import Link from '../link';
 
-import entryStyles from '../../assets/css/theme/modules/entry.module.css';
-
 const defaultLinks = [
 	{
 		name: `Github`,
@@ -25,8 +23,8 @@ export default function EntryNav({ title, links = defaultLinks }) {
 	return (
 		<div
 			className={classnames(
-				`bg-white text-primary-900 px-5 py-10 sm:px-10 lg:py-8 xl:py-12`,
-				entryStyles.entryNav
+				'entry__nav',
+				`bg-white text-primary-900 px-5 py-10 sm:px-10 lg:py-8 xl:py-12`
 			)}
 		>
 			<h1 className="mb-6 text-3xl font-normal">{title || 'Connect.'}</h1>

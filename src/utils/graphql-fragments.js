@@ -1,21 +1,15 @@
 import { graphql } from 'gatsby';
 
-export const FeaturedImage = graphql`
-	fragment FeaturedImage on File {
-		childImageSharp {
-			fluid(maxWidth: 1280) {
-				...GatsbyImageSharpFluid
-			}
-		}
-	}
+export const FeaturedImage = graphql`fragment FeaturedImage on File {
+  childImageSharp {
+    gatsbyImageData(layout: FULL_WIDTH)
+  }
+}
 `;
 
-export const SquareImage = graphql`
-	fragment SquareImage on File {
-		childImageSharp {
-			fluid(maxWidth: 200, maxHeight: 200) {
-				...GatsbyImageSharpFluid
-			}
-		}
-	}
+export const SquareImage = graphql`fragment SquareImage on File {
+  childImageSharp {
+    gatsbyImageData(width: 200, height: 200, layout: CONSTRAINED)
+  }
+}
 `;

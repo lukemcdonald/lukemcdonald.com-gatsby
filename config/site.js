@@ -12,8 +12,6 @@ module.exports = {
 	tagline: 'Christian / Husband / Father / Coach',
 	description:
 		'Luke McDonald is a Christian, husband, father, and wrestling coach.',
-	keywords:
-		'luke mcdonald, christian, husband, father, coach, designer, developer, wordpress, javascript, react',
 	image: {
 		banner: 'src/assets/images/banner.png',
 		icon: 'src/assets/images/favicon.png',

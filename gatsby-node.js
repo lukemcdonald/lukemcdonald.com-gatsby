@@ -60,13 +60,15 @@ async function createPagePages({ graphql, actions, reporter }) {
 		return;
 	}
 
-	data.pages.nodes.forEach((node) => {
+	const results = (data.pages || {}).nodes || [];
+
+	results.forEach((post) => {
 		actions.createPage({
-			path: node.fields.path,
-			component: path.resolve(`./src/templates/page.js`),
+			path: post.fields.path,
+			component: require.resolve(`./src/templates/page.js`),
 			context: {
-				slug: node.fields.slug,
-				type: node.fields.type,
+				slug: post.fields.slug,
+				type: post.fields.type,
 			},
 		});
 	});
@@ -97,13 +99,15 @@ async function createPostPages({ graphql, actions, reporter }) {
 		return;
 	}
 
-	data.posts.nodes.forEach((node) => {
+	const results = (data.posts || {}).nodes || [];
+
+	results.forEach((post) => {
 		actions.createPage({
-			path: node.fields.path,
-			component: path.resolve(`./src/templates/post.js`),
+			path: post.fields.path,
+			component: require.resolve(`./src/templates/post.js`),
 			context: {
-				slug: node.fields.slug,
-				type: node.fields.type,
+				slug: post.fields.slug,
+				type: post.fields.type,
 			},
 		});
 	});
@@ -134,13 +138,15 @@ async function createWorkPages({ graphql, actions, reporter }) {
 		return;
 	}
 
-	data.works.nodes.forEach((node) => {
+	const results = (data.works || {}).nodes || [];
+
+	results.forEach((post) => {
 		actions.createPage({
-			path: node.fields.path,
+			path: post.fields.path,
 			component: path.resolve(`./src/templates/work.js`),
 			context: {
-				slug: node.fields.slug,
-				type: node.fields.type,
+				slug: post.fields.slug,
+				type: post.fields.type,
 			},
 		});
 	});
