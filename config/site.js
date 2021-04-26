@@ -12,11 +12,7 @@ module.exports = {
 	tagline: 'Christian / Husband / Father / Coach',
 	description:
 		'Luke McDonald is a Christian, husband, father, and wrestling coach.',
-	image: {
-		banner: 'src/assets/images/banner.png',
-		icon: 'src/assets/images/favicon.png',
-		logo: 'src/assets/images/logo.png',
-	},
+	icon: 'static/favicon.png',
 	themeColor: '#7dc149',
 	backgroundColor: '#18351c',
 	social: {

@@ -11,15 +11,15 @@ module.exports = {
 		...config,
 	},
 	plugins: [
-    `gatsby-plugin-postcss`,
+		`gatsby-plugin-postcss`,
 		`gatsby-plugin-react-helmet`,
-    `gatsby-plugin-robots-txt`,
+		`gatsby-plugin-robots-txt`,
 		`gatsby-plugin-sitemap`,
-    `gatsby-plugin-image`,
+		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-netlify`,
-    {
+		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				name: config.title,
@@ -29,7 +29,7 @@ module.exports = {
 				background_color: config.backgroundColor,
 				theme_color: config.themeColor,
 				display: 'standalone',
-				icon: config.image.icon,
+				icon: config.icon,
 			},
 		},
 		{
