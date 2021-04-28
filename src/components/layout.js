@@ -7,9 +7,9 @@ import Main from './main';
 
 export default function Layout({ children }) {
 	return (
-		<div className="grid">
+		<div className="lg:grid">
 			<StaticImage
-				className="max-h-screen overflow-hidden opacity-20"
+				className="hidden lg:max-h-screen lg:overflow-hidden lg:opacity-20 lg:block"
 				style={{
 					gridArea: '1/1',
 				}}

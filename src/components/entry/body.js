@@ -8,8 +8,8 @@ export default function EntryBody({ image, html }) {
 			{image && (
 				<figure
 					className={classnames(
-						'relative bg-brand-light fill-current',
-						'entry__media'
+						'entry__media',
+						'relative bg-brand-light fill-current'
 					)}
 				>
 					<GatsbyImage
@@ -22,8 +22,8 @@ export default function EntryBody({ image, html }) {
 			{html && (
 				<div
 					className={classnames(
-						'bg-primary-900 flex flex-col justify-center px-5 py-10 text-lg text-white relative leading-normal xs:px-10',
-						'entry__content'
+						'entry__content',
+						'bg-primary-900 flex flex-col justify-center px-5 py-10 text-lg text-white relative leading-normal xs:px-10 '
 					)}
 					dangerouslySetInnerHTML={{ __html: html }}
 				/>

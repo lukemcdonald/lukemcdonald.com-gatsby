@@ -1,6 +1,10 @@
 /* Entry
 ------------------------------------------------------------------------------*/
 @layer components {
+  .entry {
+    @apply flex flex-col;
+  }
+
   .entry__header {
     text-shadow: -3px -3px 10px #7dc149,
       3px -3px 15px #7dc149,
@@ -8,10 +12,22 @@
       3px 3px 15px #7dc149;
   }
 
+  .entry__body {
+    @apply flex flex-col;
+  }
+
+  .entry__media {
+    @apply order-1;
+  }
+
   .entry__content {
     a {
       @apply text-inherit no-underline border-primary-500 border-b-2;
     }
+  }
+
+  .entry__nav {
+    @apply order-1;
   }
 
   @screen xs {

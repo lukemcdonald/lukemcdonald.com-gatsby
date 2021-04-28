@@ -7,8 +7,8 @@ export default function EntryHeader({ title, subtitle, date }) {
 	return (
 		<header
 			className={classnames(
-				'relative overflow-hidden bg-primary-500 justify-center flex flex-col px-5 pt-32 pb-10 text-primary-900 sm:px-10 xl:py-20',
-				'entry__header'
+				'entry__header',
+				'relative overflow-hidden bg-primary-500 justify-center flex flex-col px-5 pt-32 pb-10 text-primary-900 sm:px-10 xl:py-20'
 			)}
 			style={{
 				backgroundSize: '120%',

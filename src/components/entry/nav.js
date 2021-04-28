@@ -4,18 +4,7 @@ import Obfuscate from 'react-obfuscate';
 
 import Link from '../link';
 
-export default function EntryNav({ title, links }) {
-	const linkItems = links || [
-		{
-			name: `Github`,
-			to: ``,
-		},
-		{
-			name: `Email`,
-			to: `https://twitter.com/thelukemcdonald`,
-		},
-	];
-
+export default function EntryNav({ title }) {
 	const linkStyles =
 		'block tracking-wide no-underline uppercase border-b-2 border-transparent text-inherit hover:border-primary-500';
 
