@@ -5,6 +5,7 @@
     "url": "https://lukemcdonald.com"
   },
   "dependencies": {
+    "@headlessui/react": "^1.1.0",
     "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.5",
     "classnames": "^2.3.1",
@@ -36,7 +37,6 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "react-obfuscate": "^3.6.8",
-    "slugify": "^1.5.0",
     "tailwindcss": "^2.1.2",
     "typeface-archivo": "^1.1.13"
   },

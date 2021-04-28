@@ -2,7 +2,6 @@ const { fontFamily } = require(`tailwindcss/defaultTheme`);
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-	mode: 'jit',
 	purge: {
 		content: ['./src/**/*.js', './src/**/*.css'],
 	},
@@ -57,5 +56,4 @@ module.exports = {
 			visibility: ['responsive', 'group-hover'],
 		},
 	},
-	plugins: [require('@tailwindcss/typography')],
 };

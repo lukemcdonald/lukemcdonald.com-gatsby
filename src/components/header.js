@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import slugify from 'slugify';
 import classnames from 'classnames';
 
 import Link from './link';
+import Nav from './navMenu';
 
 import Logo from '../assets/svgs/logo.svg';
 
@@ -54,7 +54,7 @@ export default function Header() {
 	return (
 		<header
 			className={classnames(
-				'absolute top-0 left-0 flex items-center p-5 w-1/2 z-50',
+				'absolute top-0 left-0 flex items-center p-5 w-full lg:w-1/2 z-50',
 				'site-header'
 			)}
 		>
@@ -69,48 +69,11 @@ export default function Header() {
 				</h1>
 			</Link>
 
-			<nav className="px-3 transition-all duration-300">
-				<ul className="flex">
-					{menuLinks.map((link) => (
-						<li
-							className="relative block hover:text-white group hover:cursor-pointer"
-							key={slugify(link.name)}
-						>
-							<Link
-								activeClassName="text-white"
-								className="block p-2 tracking-wide uppercase"
-								partiallyActive={link.to !== `/`}
-								to={link.to}
-							>
-								{link.name}
-							</Link>
-
-							{link?.links && (
-								<ul
-									className="absolute left-0 invisible hidden w-40 min-w-full py-2 transition-all duration-500 transform -translate-x-1/2 bg-white rounded shadow-lg opacity-0 group-hover:visible group-hover:opacity-100 group-hover:block"
-									style={{ left: '50%' }}
-								>
-									{link.links.map((item) => (
-										<li
-											className="block clear-both w-full duration-500 hover:cursor-pointer text-primary-900"
-											key={slugify(item.name)}
-										>
-											<Link
-												activeClassName="text-primary-700"
-												className="block px-4 py-1 hover:text-primary-700"
-												partiallyActive
-												to={item.to}
-											>
-												{item.name}
-											</Link>
-										</li>
-									))}
-								</ul>
-							)}
-						</li>
-					))}
-				</ul>
-			</nav>
+			<Nav className="px-4" links={menuLinks}>
+				{menuLinks.map((link) => (
+					<Nav.Menu key={link.name} link={link} />
+				))}
+			</Nav>
 		</header>
 	);
 }

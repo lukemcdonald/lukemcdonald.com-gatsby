@@ -1,22 +1,21 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import classnames from 'classnames';
-import slugify from 'slugify';
 import Obfuscate from 'react-obfuscate';
 
 import Link from '../link';
 
-const defaultLinks = [
-	{
-		name: `Github`,
-		to: ``,
-	},
-	{
-		name: `Email`,
-		to: `https://twitter.com/thelukemcdonald`,
-	},
-];
+export default function EntryNav({ title, links }) {
+	const linkItems = links || [
+		{
+			name: `Github`,
+			to: ``,
+		},
+		{
+			name: `Email`,
+			to: `https://twitter.com/thelukemcdonald`,
+		},
+	];
 
-export default function EntryNav({ title, links = defaultLinks }) {
 	const linkStyles =
 		'block tracking-wide no-underline uppercase border-b-2 border-transparent text-inherit hover:border-primary-500';
 

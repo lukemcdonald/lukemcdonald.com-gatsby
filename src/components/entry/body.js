@@ -1,10 +1,10 @@
 import React from 'react';
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from 'gatsby-plugin-image';
 import classnames from 'classnames';
 
 export default function EntryBody({ image, html }) {
 	return (
-        <div className="entry__body bg-primary-500">
+		<div className="entry__body bg-primary-500">
 			{image && (
 				<figure
 					className={classnames(
@@ -13,8 +13,9 @@ export default function EntryBody({ image, html }) {
 					)}
 				>
 					<GatsbyImage
-                        image={image.childImageSharp.gatsbyImageData}
-                        className="block xs:w-full xs:h-full xs:object-cover lg:absolute lg:pin-t lg:pin-l lg:w-full lg:h-full" />
+						image={image.childImageSharp.gatsbyImageData}
+						className="block xs:w-full xs:h-full xs:object-cover lg:absolute lg:pin-t lg:pin-l lg:w-full lg:h-full"
+					/>
 				</figure>
 			)}
 
@@ -28,5 +29,5 @@ export default function EntryBody({ image, html }) {
 				/>
 			)}
 		</div>
-    );
+	);
 }
