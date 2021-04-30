@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import Mountains from '../../assets/svgs/mountains.svg';
 
-export default function EntryHeader({ title, subtitle, date }) {
+export default function EntryHeader({ title, tagline, subtitle, date }) {
 	return (
 		<header
 			className={classnames(
@@ -15,6 +15,12 @@ export default function EntryHeader({ title, subtitle, date }) {
 			}}
 		>
 			<div className="relative z-10">
+				{tagline && (
+					<div className="mb-1 text-sm font-semibold tracking-wider uppercase text-primary-800">
+						{tagline}
+					</div>
+				)}
+
 				<h1 className="mb-6 text-5xl font-semibold">{title}</h1>
 				{subtitle && (
 					<div
@@ -22,6 +28,7 @@ export default function EntryHeader({ title, subtitle, date }) {
 						dangerouslySetInnerHTML={{ __html: subtitle }}
 					/>
 				)}
+
 				{date && <div className="text-lg leading-normal">{date}</div>}
 			</div>
 

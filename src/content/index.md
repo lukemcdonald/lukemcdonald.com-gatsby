@@ -3,7 +3,7 @@ draft: false
 slug: "home"
 title: "Greetings."
 subtitle: "<div class='bio-tagline'>
-  <a href='https://bbcmonticello.com'>Christian</a>
+  <a href='/i-am-a/christian'>Christian</a>
   <a href='https://www.facebook.com/heather.cookmcdonald'>Husband</a>
   <a href='https://carlymcdonald.com/'>Father</a>
   <a href='https://www.facebook.com/monticellowrestling'>Coach</a>

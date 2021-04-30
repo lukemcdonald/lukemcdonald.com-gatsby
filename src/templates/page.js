@@ -7,21 +7,26 @@ import Entry from '../components/entry';
 export default function SinglePage({ data, location }) {
 	const { page } = data;
 
-	return <>
-        <SEO
-            title={page.frontmatter.title}
-            description={page.frontmatter.description || page.excerpt}
-            location={location}
-            image={page.frontmatter.image?.childImageSharp?.gatsbyImageData.src || ''}
-        />
+	return (
+		<>
+			<SEO
+				title={page.frontmatter.title}
+				description={page.frontmatter.description || page.excerpt}
+				location={location}
+				image={
+					page.frontmatter.image?.childImageSharp?.gatsbyImageData.src || ''
+				}
+			/>
 
-        <Entry
-            title={page.frontmatter.title}
-            subtitle={page.frontmatter.subtitle}
-            html={page.html}
-            image={page.frontmatter.image || ''}
-        />
-    </>;
+			<Entry
+				title={page.frontmatter.title}
+				tagline={page.frontmatter.tagline}
+				subtitle={page.frontmatter.subtitle}
+				html={page.html}
+				image={page.frontmatter.image || ''}
+			/>
+		</>
+	);
 }
 
 export const query = graphql`
@@ -31,6 +36,7 @@ export const query = graphql`
 			html
 			frontmatter {
 				title
+				tagline
 				subtitle
 				description
 				image {

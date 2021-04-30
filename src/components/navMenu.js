@@ -44,9 +44,7 @@ export const NavMenu = ({ as = 'div', children, className, link }) => (
 										{({ active }) => (
 											<Link
 												className={classnames(
-													active
-														? 'bg-primary-200 text-primary-800'
-														: 'text-primary-900',
+													active ? 'bg-primary-200' : 'text-primary-900',
 													'group flex rounded items-center w-full px-3 py-2 text-base'
 												)}
 												partiallyActive={item.to !== `/`}

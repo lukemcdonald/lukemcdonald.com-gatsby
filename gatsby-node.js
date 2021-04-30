@@ -35,6 +35,45 @@ exports.onCreateNode = ({ node, actions }) => {
 	}
 };
 
+async function createAboutPages({ graphql, actions, reporter }) {
+	const { data, errors } = await graphql(`
+		query {
+			about: allMarkdownRemark(
+				filter: {
+					fields: { type: { eq: "i-am-a" } }
+					frontmatter: { draft: { eq: false } }
+				}
+			) {
+				nodes {
+					fields {
+						path
+						slug
+						type
+					}
+				}
+			}
+		}
+	`);
+
+	if (errors) {
+		reporter.panicOnBuild(`Error while running GraphQL query for works.`);
+		return;
+	}
+
+	const results = (data.about || {}).nodes || [];
+
+	results.forEach((post) => {
+		actions.createPage({
+			path: post.fields.path,
+			component: path.resolve(`./src/templates/page.js`),
+			context: {
+				slug: post.fields.slug,
+				type: post.fields.type,
+			},
+		});
+	});
+}
+
 async function createPagePages({ graphql, actions, reporter }) {
 	const { data, errors } = await graphql(`
 		query {
@@ -154,6 +193,7 @@ async function createWorkPages({ graphql, actions, reporter }) {
 
 export async function createPages(params) {
 	await Promise.all([
+		createAboutPages(params),
 		createPagePages(params),
 		createPostPages(params),
 		createWorkPages(params),

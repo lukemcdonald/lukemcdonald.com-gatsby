@@ -5,10 +5,15 @@ import EntryHeader from './header';
 import EntryNav from './nav';
 import EntryBody from './body';
 
-export default function Entry({ title, subtitle, date, image, html }) {
+export default function Entry({ title, tagline, subtitle, date, image, html }) {
 	return (
 		<article className={classnames('entry', 'w-full overflow-hidden')}>
-			<EntryHeader title={title} subtitle={subtitle} date={date} />
+			<EntryHeader
+				title={title}
+				tagline={tagline}
+				subtitle={subtitle}
+				date={date}
+			/>
 
 			<EntryNav />
 
