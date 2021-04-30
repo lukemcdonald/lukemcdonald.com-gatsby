@@ -1,22 +1,22 @@
 @layer components {
   .bio-tagline {
+    @apply inline-flex flex-col;
     text-shadow: none;
     counter-reset: list-number;
 
-    li:before {
-      counter-increment: list-number;
-      content: counter(list-number);
-      bottom: 1px;
+    a {
+      @apply flex items-center bg-transparent leading-none p-1.5 pr-3 rounded transition relative bg-black bg-opacity-0 hover:bg-opacity-10;
 
-      @apply text-primary-500 bg-primary-900 inline-flex items-center justify-center text-xs mr-3 mb-2 h-6 w-7 leading-none transform -skew-y-6 font-semibold relative;
+      &:hover:before {
+        /* @apply text-primary; */
+      }
     }
 
-    a {
-      @apply inline-block leading-tight border-transparent border-b-2 text-inherit -ml-10 pl-10 relative;
+    a:before {
+      counter-increment: list-number;
+      content: counter(list-number);
 
-      &:hover {
-        @apply border-primary-900;
-      }
+      @apply inline-flex items-center text-primary-500 bg-primary-900 justify-center text-xs mr-3 h-6 w-7 leading-none transform -skew-y-6 font-semibold;
     }
   }
 }

@@ -2,12 +2,12 @@
 draft: false
 slug: "home"
 title: "Greetings."
-subtitle: "<ol class='bio-tagline'>
-  <li><a href='https://bbcmonticello.com'>Christian</a></li> 
-  <li><a href='https://www.facebook.com/heather.cookmcdonald'>Husband</a></li>
-  <li><a href='https://carlymcdonald.com/'>Father</a></li>
-  <li><a href='https://www.facebook.com/monticellowrestling'>Coach</a></li>
-</ol>"
+subtitle: "<div class='bio-tagline'>
+  <a href='https://bbcmonticello.com'>Christian</a>
+  <a href='https://www.facebook.com/heather.cookmcdonald'>Husband</a>
+  <a href='https://carlymcdonald.com/'>Father</a>
+  <a href='https://www.facebook.com/monticellowrestling'>Coach</a>
+</div>"
 image: "../assets/images/luke-mcdonald-stache.jpg"
 ---
 
