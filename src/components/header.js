@@ -54,7 +54,7 @@ export default function Header() {
 	return (
 		<header
 			className={classnames(
-				'absolute top-0 left-0 flex items-center p-5 w-full lg:w-1/2 z-50',
+				'absolute top-0 left-0 flex items-center p-5 w-full z-50 lg:w-1/2 ',
 				'site-header'
 			)}
 		>

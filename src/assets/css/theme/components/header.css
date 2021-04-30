@@ -12,7 +12,7 @@
     }
 
     h1 {
-      max-width: 0;
+      @apply max-w-0 absolute bg-white h-16 left-16 items-center flex;
     }
 
     > a:hover  {
