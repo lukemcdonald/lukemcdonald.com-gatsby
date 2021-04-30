@@ -17,6 +17,12 @@ module.exports = {
 				lg: '992px',
 				xl: '1200px',
 			},
+			transitionDelay: {
+				0: '0ms',
+			},
+			transitionDuration: {
+				0: '0ms',
+			},
 			typography: (theme) => ({
 				DEFAULT: {
 					css: {
@@ -52,7 +58,11 @@ module.exports = {
 		extend: {
 			cursor: ['responsive', 'hover'],
 			display: ['responsive', 'group-hover', 'last'],
+			maxWidth: ['hover', 'focus', 'group-hover'],
 			opacity: ['responsive', 'hover', 'focus', 'group-hover'],
+			padding: ['hover', 'focus', 'group-hover'],
+			transitionDelay: ['hover', 'focus', 'group-hover'],
+			transitionDuration: ['hover', 'focus', 'group-hover'],
 			visibility: ['responsive', 'group-hover'],
 		},
 	},

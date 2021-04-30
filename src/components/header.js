@@ -60,16 +60,16 @@ export default function Header() {
 		>
 			<Link
 				to="/"
-				className="relative inline-flex items-center text-white no-underline bg-white whitespace-nowrap hover:shadow-lg"
+				className="relative inline-flex items-center text-white no-underline bg-white whitespace-nowrap hover:shadow-lg group"
 			>
 				<Logo className="w-16 h-16 p-4 fill-current bg-primary-900" />
 
-				<h1 className="px-0 overflow-hidden text-xl font-bold tracking-wide uppercase transition-all duration-150 text-primary-900">
+				<h1 className="absolute flex items-center h-16 px-0 overflow-hidden text-xl font-bold tracking-wide uppercase transition-all duration-150 bg-white shadow-lg text-primary-900 max-w-0 left-16 group-hover:max-w-6xl group-hover:px-4 group-hover:duration-300">
 					{site.siteMetadata.title}
 				</h1>
 			</Link>
 
-			<Nav className="px-4" links={menuLinks}>
+			<Nav className="px-4 duration-200" links={menuLinks}>
 				{menuLinks.map((link) => (
 					<Nav.Menu key={link.name} link={link} />
 				))}
