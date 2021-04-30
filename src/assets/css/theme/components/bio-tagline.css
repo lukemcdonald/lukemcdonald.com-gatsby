@@ -1,0 +1,22 @@
+@layer components {
+  .bio-tagline {
+    text-shadow: none;
+    counter-reset: list-number;
+
+    li:before {
+      counter-increment: list-number;
+      content: counter(list-number);
+      bottom: 1px;
+
+      @apply text-primary-500 bg-primary-900 inline-flex items-center justify-center text-xs mr-3 mb-2 h-6 w-7 leading-none transform -skew-y-6 font-semibold relative;
+    }
+
+    a {
+      @apply inline-block leading-tight border-transparent border-b-2 text-inherit -ml-10 pl-10 relative;
+
+      &:hover {
+        @apply border-primary-900;
+      }
+    }
+  }
+}

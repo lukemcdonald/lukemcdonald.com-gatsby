@@ -12,6 +12,7 @@
  * -----------------------------------------------------------------------------
  */
 @import "tailwindcss/components";
+@import "theme/components/bio-tagline";
 @import 'theme/components/entry.css';
 @import 'theme/components/header.css';
 
