@@ -36,6 +36,28 @@ const menuLinks = [
 			},
 		],
 	},
+	{
+		name: 'Live',
+		to: '#',
+		links: [
+			{
+				name: 'Faith',
+				to: '/i-am-a/christian',
+			},
+			{
+				name: 'Marriage',
+				to: '/i-am-a/husband',
+			},
+			{
+				name: 'Kids',
+				to: '/i-am-a/father',
+			},
+			{
+				name: 'Coaching',
+				to: '/i-am-a/coach',
+			},
+		],
+	},
 ];
 
 export default function Header() {

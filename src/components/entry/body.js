@@ -9,7 +9,7 @@ export default function EntryBody({ image, html }) {
 				<figure
 					className={classnames(
 						'entry__media',
-						'relative bg-brand-light fill-current'
+						'bg-primary-500 relative fill-current'
 					)}
 				>
 					<GatsbyImage

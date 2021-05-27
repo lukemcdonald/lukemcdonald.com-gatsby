@@ -1,0 +1,9 @@
+---
+tagline: "I am a"
+title: "Father"
+slug: "father"
+draft: false
+image: "../../assets/images/luke-kids.jpg"
+subtitle: '"Like arrows in the hand of a warrior are the children of one’s youth. Blessed is the man who fills his quiver with them!" <a class="text-sm font-semibold tracking-wide uppercase text-primary-800" href="https://www.esv.org/Psalm+127/">Psalm 127:4-5</a>'
+---
+Raising children has been a great responsibility and rewarding challenge. Helping them sift through the choas and mixed messages of the world has been privelage and helped me grow in all areas of my life.

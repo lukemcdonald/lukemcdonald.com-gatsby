@@ -4,9 +4,9 @@ slug: "home"
 title: "Greetings."
 subtitle: "<div class='bio-tagline'>
   <a href='/i-am-a/christian'>Christian</a>
-  <a href='https://www.facebook.com/heather.cookmcdonald'>Husband</a>
-  <a href='https://carlymcdonald.com/'>Father</a>
-  <a href='https://www.facebook.com/monticellowrestling'>Coach</a>
+  <a href='/i-am-a/husband'>Husband</a>
+  <a href='/i-am-a/father'>Father</a>
+  <a href='/i-am-a/coach'>Coach</a>
 </div>"
 image: "../assets/images/luke-mcdonald-stache.jpg"
 ---
