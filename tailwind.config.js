@@ -8,14 +8,13 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Archivo', ...fontFamily.sans],
+				sans: ['Fira Sans', ...fontFamily.sans],
 			},
 			screens: {
 				xs: '420px',
 				sm: '576px',
 				md: '768px',
-				lg: '992px',
-				xl: '1200px',
+				lg: '1080px',
 			},
 			transitionDelay: {
 				0: '0ms',
