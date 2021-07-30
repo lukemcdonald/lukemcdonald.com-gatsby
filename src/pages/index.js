@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import SEO from '../components/seo';
-import Entry from '../components/entry';
+import SEO from 'components/seo';
+import Entry from 'components/entry';
 
 export default function IndexPage({ data, location }) {
 	const { home } = data;

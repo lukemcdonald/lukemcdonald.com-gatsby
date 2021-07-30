@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import SEO from '../components/seo';
-import Entry from '../components/entry';
+import SEO from 'components/seo';
+import Entry from 'components/entry';
 
 export default function SingleWorkPage({ data, location }) {
 	const { work } = data;
@@ -26,7 +26,7 @@ export default function SingleWorkPage({ data, location }) {
 }
 
 export const query = graphql`
-	query($slug: String!) {
+	query ($slug: String!) {
 		work: markdownRemark(fields: { slug: { eq: $slug } }) {
 			excerpt(pruneLength: 160)
 			html

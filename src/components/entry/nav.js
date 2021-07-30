@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import Obfuscate from 'react-obfuscate';
 
-import Link from '../link';
+import Link from 'components/link';
 
 export default function EntryNav({ title }) {
 	const linkStyles =

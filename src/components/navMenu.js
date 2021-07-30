@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { Menu, Transition } from '@headlessui/react';
 import { HiChevronDown as ChevronDown } from 'react-icons/hi';
 
-import Link from './link';
+import Link from 'components/link';
 
 export const NavMenu = ({ as = 'div', children, className, link }) => (
 	<Menu

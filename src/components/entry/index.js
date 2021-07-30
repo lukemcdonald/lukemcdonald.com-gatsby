@@ -1,9 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import EntryHeader from './header';
-import EntryNav from './nav';
-import EntryBody from './body';
+import EntryHeader from 'components/entry/header';
+import EntryNav from 'components/entry/nav';
+import EntryBody from 'components/entry/body';
 
 export default function Entry({ title, tagline, subtitle, date, image, html }) {
 	return (

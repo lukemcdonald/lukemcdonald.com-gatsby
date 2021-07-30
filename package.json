@@ -19,6 +19,7 @@
     "gatsby-plugin-postcss": "^4.6.0",
     "gatsby-plugin-react-helmet": "^4.6.0",
     "gatsby-plugin-react-svg": "^3.0.1",
+    "gatsby-plugin-resolve-src": "^2.1.0",
     "gatsby-plugin-robots-txt": "^1.6.2",
     "gatsby-plugin-sharp": "^3.6.0",
     "gatsby-plugin-sitemap": "^4.2.0",
@@ -65,13 +66,23 @@
     "rules": {
       "react/jsx-props-no-spreading": "off",
       "react/prop-types": 0
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "moduleDirectory": [
+            "node_modules",
+            "src"
+          ]
+        }
+      }
     }
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
-  "name": "gatsby-starter-site",
+  "name": "luke-mcdonald-com",
   "repository": {
     "type": "git",
     "url": "https://github.com/lukemcdonald/gatsby-starter-site"

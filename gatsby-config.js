@@ -20,6 +20,7 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-netlify`,
 		`gatsby-plugin-catch-links`,
+		'gatsby-plugin-resolve-src',
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {

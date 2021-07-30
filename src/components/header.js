@@ -2,10 +2,9 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import classnames from 'classnames';
 
-import Link from './link';
-import Nav from './navMenu';
-
-import Logo from '../assets/svgs/logo.svg';
+import Logo from 'assets/svgs/logo.svg';
+import Link from 'components/link';
+import Nav from 'components/navMenu';
 
 const menuLinks = [
 	{

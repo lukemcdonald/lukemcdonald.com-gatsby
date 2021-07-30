@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import SEO from '../components/seo';
-import Entry from '../components/entry';
-import PostNav from '../components/postNav';
+import SEO from 'components/seo';
+import Entry from 'components/entry';
+import PostNav from 'components/postNav';
 
 export default function SinglePostPage({ data, location, pageContext }) {
 	const { post } = data;
@@ -30,7 +30,7 @@ export default function SinglePostPage({ data, location, pageContext }) {
 }
 
 export const query = graphql`
-	query($slug: String!) {
+	query ($slug: String!) {
 		post: markdownRemark(fields: { slug: { eq: $slug } }) {
 			excerpt(pruneLength: 160)
 			html

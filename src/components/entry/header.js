@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import Mountains from '../../assets/svgs/mountains.svg';
+import Mountains from 'assets/svgs/mountains.svg';
 
 export default function EntryHeader({ title, tagline, subtitle, date }) {
 	return (
