@@ -29,8 +29,6 @@
     "gatsby-transformer-remark": "^4.11.0",
     "gatsby-transformer-sharp": "^3.14.0",
     "pluralize": "^8.0.0",
-    "postcss": "^8.3.11",
-    "postcss-cli": "^9.0.1",
     "postcss-custom-properties": "^12.0.0",
     "postcss-import": "^14.0.2",
     "postcss-nested": "^5.0.6",
@@ -44,46 +42,15 @@
   },
   "description": "Gatsby starter site with Tailwind CSS, Purge CSS, Markdown, SEO, and more.",
   "devDependencies": {
-    "@babel/core": "^7.15.8",
-    "@babel/eslint-parser": "^7.15.4",
-    "@babel/preset-react": "^7.14.5",
-    "@types/node": "^16.7.13",
-    "@typescript-eslint/eslint-plugin": "^4.31.0",
-    "@typescript-eslint/parser": "^4.31.0",
     "cross-env": "^7.0.3",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-airbnb-typescript": "^14.0.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-wesbos": "2.1.0",
-    "eslint-plugin-html": "^6.1.2",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint": "^8.0.1",
+    "eslint-config-kentcdodds": "^19.2.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.25.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
     "esm": "^3.2.25",
-    "prettier": "^2.3.2",
-    "typescript": "^4.4.2"
-  },
-  "eslintConfig": {
-    "extends": [
-      "wesbos"
-    ],
-    "rules": {
-      "react/jsx-props-no-spreading": "off",
-      "react/prop-types": 0
-    },
-    "settings": {
-      "import/resolver": {
-        "node": {
-          "moduleDirectory": [
-            "node_modules",
-            "src"
-          ]
-        }
-      }
-    }
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.1",
+    "prettier": "^2.4.1",
+    "prettier-plugin-tailwind": "^2.2.12"
   },
   "keywords": [
     "gatsby"
@@ -99,7 +66,13 @@
     "clean": "gatsby clean",
     "develop": "cross-env NODE_OPTIONS='-r esm' gatsby develop",
     "serve": "cross-env NODE_OPTIONS='-r esm' gatsby serve",
-    "start": "npm run develop"
+    "start": "npm run develop",
+    "format": "prettier --write \"**/*.+(css|gql|graphql|js|json|jsx|less|md|mdx|scss|ts|tsx|vue|yml|yaml)\""
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "eslintIgnore": [
+    "node_modules",
+    "build",
+    "public"
+  ]
 }

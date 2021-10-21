@@ -1,0 +1,10 @@
+.vscode/
+.DS_Store
+node_modules/
+
+/.cache
+/build
+/public
+/coverage
+
+app/styles
