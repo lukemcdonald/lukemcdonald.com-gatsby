@@ -1,44 +1,39 @@
-import React from 'react';
-import classnames from 'classnames';
-import { StaticImage } from 'gatsby-plugin-image';
+import React from 'react'
+import classnames from 'classnames'
+import { StaticImage } from 'gatsby-plugin-image'
 
-import Header from 'components/header';
-import Main from 'components/main';
+import Header from 'components/header'
+import Main from 'components/main'
 
 export default function Layout({ children }) {
-	return (
-		<div className="lg:grid">
-			<StaticImage
-				className="hidden lg:max-h-screen lg:overflow-hidden lg:opacity-20 lg:block"
-				style={{
-					gridArea: '1/1',
-				}}
-				src="../assets/images/landscape-3.jpg"
-				alt="Background"
-				layout="fullWidth"
-				transformOptions={{
-					grayscale: true,
-				}}
-			/>
+  return (
+    <div className="lg:grid">
+      <StaticImage
+        className="hidden lg:block lg:max-h-screen lg:opacity-20 lg:overflow-hidden"
+        style={{
+          gridArea: '1/1',
+        }}
+        src="../assets/images/landscape-3.jpg"
+        alt="Background"
+        layout="fullWidth"
+        transformOptions={{
+          grayscale: true,
+        }}
+      />
 
-			<div
-				className="text-primary-900 lg:bg-shadow-lg lg:flex lg:items-center lg:justify-center lg:min-h-screen lg:relative place-items-center"
-				style={{
-					gridArea: '1/1',
-				}}
-			>
-				<div
-					className={classnames(
-						'site',
-						'bg-white m-auto relative lg:max-w-screen-xl lg:w-11/12'
-					)}
-				>
-					<Header />
-					<Main>{children}</Main>
-				</div>
-			</div>
-		</div>
-	);
+      <div
+        className="lg:bg-shadow-lg place-items-center text-primary-900 lg:relative lg:flex lg:items-center lg:justify-center lg:min-h-screen"
+        style={{
+          gridArea: '1/1',
+        }}
+      >
+        <div className={classnames('site', 'bg-white m-auto relative lg:max-w-screen-xl lg:w-11/12')}>
+          <Header />
+          <Main>{children}</Main>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 // export const query = graphql`
