@@ -9,6 +9,7 @@ module.exports = {
 
     // this one isn't smart enough for our "~/" imports
     'import/order': 'off',
+    'import/no-unresolved': 'off',
 
     'prettier/prettier': [
       'error',

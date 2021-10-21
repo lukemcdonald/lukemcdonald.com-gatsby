@@ -1,6 +1,13 @@
 {
+  "include": [
+    "./**/*"
+  ],
   "compilerOptions": {
-    "baseUrl": "./src"
-  },
-  "include": ["src"]
+    "baseUrl": "./src",
+    "esModuleInterop": true,
+    "jsx": "react",
+    "module": "commonjs",
+    "target": "es5",
+    "strict": true
+  }
 }

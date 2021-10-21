@@ -60,7 +60,7 @@ async function createAboutPages({ graphql, actions, reporter }) {
   results.forEach(post => {
     actions.createPage({
       path: post.fields.path,
-      component: path.resolve(`./src/templates/page.js`),
+      component: require.resolve(`./src/templates/page.js`),
       context: {
         slug: post.fields.slug,
         type: post.fields.type,
@@ -162,7 +162,7 @@ async function createWorkPages({ graphql, actions, reporter }) {
   results.forEach(post => {
     actions.createPage({
       path: post.fields.path,
-      component: path.resolve(`./src/templates/work.js`),
+      component: require.resolve(`./src/templates/work.js`),
       context: {
         slug: post.fields.slug,
         type: post.fields.type,
