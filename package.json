@@ -67,7 +67,8 @@
     "develop": "cross-env NODE_OPTIONS='-r esm' gatsby develop",
     "serve": "cross-env NODE_OPTIONS='-r esm' gatsby serve",
     "start": "npm run develop",
-    "format": "prettier --write \"**/*.+(css|gql|graphql|js|json|jsx|less|md|mdx|scss|ts|tsx|vue|yml|yaml)\""
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "version": "0.1.0",
   "eslintIgnore": [
