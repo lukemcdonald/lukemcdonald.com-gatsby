@@ -7,6 +7,7 @@ module.exports = {
     // Meh...
     '@babel/new-cap': 'off',
     'react/jsx-filename-extension': 'off',
+    'react/jsx-pascal-case': 'off', // Allow for uppercase SEO component
 
     // These are not smart enough for our resolved imports.
     'import/order': 'off',
