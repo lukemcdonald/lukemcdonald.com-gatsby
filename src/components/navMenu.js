@@ -8,9 +8,9 @@ import Link from 'components/link'
 
 export const NavMenu = ({ as = 'div', children, className, link }) => (
   <Menu as={as} className={classnames('relative inline-block text-left testing', className)}>
-    <Menu.Button className="inline-flex justify-center px-3 py-2 text-primary-900 text-base tracking-wide bg-black bg-opacity-0 hover:bg-opacity-10 rounded-md focus:outline-none uppercase focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+    <Menu.Button className="inline-flex justify-center px-3 py-2 text-base tracking-wide uppercase bg-black bg-opacity-0 rounded-md text-primary-900 hover:bg-opacity-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
       {link.name}
-      <ChevronDown className="ml-1 mt-px w-5 h-5 text-primary-900" aria-hidden="true" />
+      <ChevronDown className="w-5 h-5 mt-px ml-1 text-primary-900" aria-hidden="true" />
     </Menu.Button>
 
     {link?.links && (
@@ -22,10 +22,10 @@ export const NavMenu = ({ as = 'div', children, className, link }) => (
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute z-10 left-0 mt-2 w-44 bg-white rounded-md focus:outline-none shadow-lg divide-primary-100 divide-y origin-top-left ring-1 ring-black ring-opacity-5">
+        <Menu.Items className="absolute left-0 z-10 mt-2 origin-top-left bg-white divide-y rounded-md shadow-lg w-44 focus:outline-none divide-primary-100 ring-1 ring-black ring-opacity-5">
           <div className="px-1 py-1">
             {link.links.map(item => (
-              <Menu.Item>
+              <Menu.Item key={item.name}>
                 {({ active }) => (
                   <Link
                     className={classnames(

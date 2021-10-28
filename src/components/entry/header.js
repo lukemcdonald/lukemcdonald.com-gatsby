@@ -16,7 +16,7 @@ export default function EntryHeader({ title, tagline, subtitle, date }) {
     >
       <div className="relative z-10">
         {tagline && (
-          <div className="mb-1 text-primary-800 text-sm font-semibold tracking-wider uppercase">{tagline}</div>
+          <div className="mb-1 text-sm font-semibold tracking-wider uppercase text-primary-800">{tagline}</div>
         )}
 
         <h1 className="mb-6 text-5xl font-semibold">{title}</h1>
@@ -25,7 +25,7 @@ export default function EntryHeader({ title, tagline, subtitle, date }) {
         {date && <div className="text-lg leading-normal">{date}</div>}
       </div>
 
-      <Mountains className="absolute z-0 bottom-0 left-0" />
+      <Mountains className="absolute bottom-0 left-0 z-0" />
     </header>
   )
 }

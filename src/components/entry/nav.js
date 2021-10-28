@@ -17,7 +17,7 @@ export default function EntryNav({ title }) {
           GitHub
         </Link>
 
-        <span className="mx-4 w-24 border-b" />
+        <span className="w-24 mx-4 border-b" />
 
         <Obfuscate className={linkStyles} email="thelukemcdonald@gmail.com">
           Email
