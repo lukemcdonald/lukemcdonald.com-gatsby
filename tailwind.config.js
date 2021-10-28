@@ -12,6 +12,9 @@ module.exports = {
       fontFamily: {
         sans: ['Fira Sans', ...fontFamily.sans],
       },
+      maxHeight: {
+        site: '675px',
+      },
       screens: {
         xs: '420px',
         sm: '576px',

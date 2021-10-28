@@ -27,7 +27,7 @@ export default function Layout({ children }) {
           gridArea: '1/1',
         }}
       >
-        <div className={classnames('site', 'bg-white m-auto relative lg:max-w-screen-xl lg:w-11/12')}>
+        <div className={classnames('site', 'bg-white m-auto relative lg:max-w-screen-xl lg:w-11/12 lg:max-h-site')}>
           <Header />
           <Main>{children}</Main>
         </div>

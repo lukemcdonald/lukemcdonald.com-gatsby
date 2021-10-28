@@ -9,7 +9,7 @@ export default function EntryBody({ image, html }) {
         <figure className={classnames('entry__media', 'bg-primary-500 relative fill-current')}>
           <GatsbyImage
             image={image.childImageSharp.gatsbyImageData}
-            className="lg:pin-t lg:pin-l block xs:w-full xs:h-full xs:object-cover lg:absolute lg:w-full lg:h-full"
+            className="block lg:pin-t lg:pin-l xs:w-full xs:h-full xs:object-cover lg:absolute lg:w-full lg:h-full"
           />
         </figure>
       )}
