@@ -1,5 +1,5 @@
-import path from 'path'
-import pluralize from 'pluralize'
+const path = require('path')
+const pluralize = require('pluralize')
 
 /**
  * Create fields from Markdown files.
