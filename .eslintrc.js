@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['prettier', 'kentcdodds', 'kentcdodds/react'],
+  extends: ['kentcdodds', 'kentcdodds/react', 'prettier'],
   plugins: ['prettier'],
   rules: {
     'no-console': 'off',
@@ -8,10 +8,6 @@ module.exports = {
     '@babel/new-cap': 'off',
     'react/jsx-filename-extension': 'off',
     'react/jsx-pascal-case': 'off', // Allow for uppercase SEO component
-
-    // These are not smart enough for our resolved imports.
-    'import/order': 'off',
-    'import/no-unresolved': 'off',
 
     // Options: https://prettier.io/docs/en/options.html
     'prettier/prettier': [
@@ -22,6 +18,7 @@ module.exports = {
         semi: false,
         singleQuote: true,
         trailingComma: 'all',
+        tabWidth: 2,
         // bracketSpacing: true,
         // bracketSameLine: false,
         // embeddedLanguageFormatting: 'auto',
@@ -32,9 +29,15 @@ module.exports = {
         // proseWrap: 'preserve',
         // quoteProps: 'as-needed',
         // requirePragma: false,
-        // tabWidth: 2,
         // useTabs: false,
       },
     ],
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        moduleDirectory: ['node_modules', 'src'],
+      },
+    },
   },
 }

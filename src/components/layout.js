@@ -37,15 +37,11 @@ export default function Layout({ children }) {
 }
 
 // export const query = graphql`
-// 	{
-// 		bgImage: file(relativePath: { eq: "billy-graham-preaching-header.jpg" }) {
-// 			childImageSharp {
-// 				gatsbyImageData(
-// 					placeholder: TRACED_SVG
-// 					transformOptions: { grayscale: true }
-// 					layout: FULL_WIDTH
-// 				)
-// 			}
-// 		}
-// 	}
-// `;
+//   {
+//     bgImage: file(relativePath: { eq: "billy-graham-preaching-header.jpg" }) {
+//       childImageSharp {
+//         gatsbyImageData(placeholder: TRACED_SVG, transformOptions: { grayscale: true }, layout: FULL_WIDTH)
+//       }
+//     }
+//   }
+// `
