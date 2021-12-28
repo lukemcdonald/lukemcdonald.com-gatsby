@@ -3,8 +3,6 @@ module.exports = {
   plugins: ['prettier'],
   rules: {
     'no-console': 'off',
-
-    // Meh...
     '@babel/new-cap': 'off',
     'react/jsx-filename-extension': 'off',
     'react/jsx-pascal-case': 'off', // Allow for uppercase SEO component
